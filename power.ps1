@@ -82,7 +82,7 @@ function Capture-Screenshot {
         $bitmap = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height
         $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
         $graphics.CopyFromScreen($bounds.Left, $bounds.Top, 0, 0, $bitmap.Size)
-        $out = "$env:TEMP\screenshot_$(Get-Date -Format 'yyyyMMdd_HHmmss').png"
+        $out = "$env:TEMP\screenshot.png"
         $bitmap.Save($out, [System.Drawing.Imaging.ImageFormat]::Png)
         $graphics.Dispose()
         $bitmap.Dispose()
